@@ -1,6 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-project(test)
-
 add_executable(test_runner test_runner.cpp test-example.cpp)
 
 set(BOOST_INCLUDE_DIRS $boost_installation_prefix/include)
