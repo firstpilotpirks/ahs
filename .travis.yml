@@ -14,13 +14,14 @@ env:
 matrix:
   include:
     - os: linux
-      dist: trusty
-      #sudo: true
+      dist: bionic
+      sudo: true
       compiler: gcc
       addons:
        apt:
          packages: &precise_latest_boost_packages
-           - gcc-7.3.1
+           - gcc
+           - cmake
            #- g++-4.8
            #- gcov-4.9
            #- clang-3.7
