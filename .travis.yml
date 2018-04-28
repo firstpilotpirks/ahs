@@ -41,6 +41,7 @@ matrix:
     #- export CXX_FLAGS=${CXX_FLAGS}" "${ENV_CXX_FLAGS}
 
 install:
+    sudo apt-get install libboost-dev libboost-all-dev
     #- if [ "$CXX" = "clang++" ] && [ "$TRAVIS_OS_NAME" = "linux" ]; then export CXX="clang++-3.7" CC="clang-3.7"; fi
     #- echo ${PATH}
     #- echo ${CXX}
