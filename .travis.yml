@@ -22,6 +22,7 @@ matrix:
          packages: &precise_latest_boost_packages
            - gcc
            - cmake
+           - libboost-all-dev
            #- g++-4.8
            #- gcov-4.9
            #- clang-3.7
