@@ -1,6 +1,3 @@
-cmake_minimum_required(VERSION 3.10)
-project(ahs)
-
 add_executable(ahs server.cpp async_acceptor.cpp async_session.cpp http_header.cpp)
 
 set(BOOST_INCLUDE_DIRS $boost_installation_prefix/include)
