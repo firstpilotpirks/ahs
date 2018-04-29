@@ -85,13 +85,15 @@ matrix:
             CXX=/usr/bin/clang++
             CC=/usr/bin/clang
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y libboost-all-dev
+#before_install:
+#  - sudo apt-get update -qq
+#  - sudo apt-get install -y libboost-all-dev
 
 script:
   - mkdir build
   - cd build
-  - cmake .. && make
+  - cmake ..
+  - make
+  - ../bin/test_runner --log_level=all --color=true
 
 
