@@ -18,16 +18,17 @@ matrix:
            - cmake-data
            - clang
            - libboost-all-dev
+      script:
+       - mkdir -p build
+       - cd build
+      # - export CXX=/usr/bin/clang++
+      # - export CC=/usr/bin/clang
+       - cmake ..
+       - make
+       - cd ../bin
+       - ./test_runner  --log_level=all --color=true
 
 #install:
 #    sudo apt-get install -yf libboost-all-dev clang
 
-script:
- - mkdir -p build
- - cd build
-# - export CXX=/usr/bin/clang++
-# - export CC=/usr/bin/clang
- - cmake ..
- - make
- - cd ../bin
- - ./test_runner  --log_level=all --color=true
+
