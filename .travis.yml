@@ -12,7 +12,6 @@ matrix:
       compiler: clang
       addons:
        apt:
-#        sources: &precise_latest_boost_sources
         packages:
            - gcc
            - cmake
@@ -23,12 +22,12 @@ matrix:
 #install:
 #    sudo apt-get install -yf libboost-all-dev clang
 
-#script:
-#     - mkdir -p build
-#     - cd build
-#     - export CXX=/usr/bin/clang++
-#     - export CC=/usr/bin/clang
-#     - cmake ..
-#     - make
-#     - cd ../bin
-#     - ./test_runner  --log_level=all --color=true
+script:
+ - mkdir -p build
+ - cd build
+# - export CXX=/usr/bin/clang++
+# - export CC=/usr/bin/clang
+ - cmake ..
+ - make
+ - cd ../bin
+ - ./test_runner  --log_level=all --color=true
