@@ -2,7 +2,16 @@ language: cpp
 
 env:
   global:
-    - LINUX_DIST=xenial
+   - LINUX_DIST=xenial
+
+addons:
+ apt:
+  packages:
+   - gcc
+   - cmake
+   - cmake-data
+   - clang
+   - libboost-all-dev
 
 matrix:
   include:
@@ -10,19 +19,21 @@ matrix:
       dist: xenial
       sudo: true
       compiler: clang
-      addons:
-       apt:
-        packages:
-           - gcc
-           - cmake
-           - cmake-data
-           - clang
-           - libboost-all-dev
       script:
        - mkdir -p build
        - cd build
-      # - export CXX=/usr/bin/clang++
-      # - export CC=/usr/bin/clang
+       - cmake ..
+       - make
+       - cd ../bin
+       - ./test_runner  --log_level=all --color=true
+
+    - os: linux
+      dist: xenial
+      sudo: true
+      compiler: gcc
+      script:
+       - mkdir -p build
+       - cd build
        - cmake ..
        - make
        - cd ../bin
@@ -30,5 +41,8 @@ matrix:
 
 #install:
 #    sudo apt-get install -yf libboost-all-dev clang
+
+# - export CXX=/usr/bin/clang++
+# - export CC=/usr/bin/clang
 
 
