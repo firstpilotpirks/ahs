@@ -21,7 +21,7 @@ matrix:
       before_install:
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        - sudo apt-get install -y libboost-all-dev clang clang++ cmake
+        - sudo apt-get install -y libboost-all-dev clang-5.0 cmake
 
 
 
