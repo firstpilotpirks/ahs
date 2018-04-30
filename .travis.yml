@@ -1,35 +1,40 @@
 sudo: required
-os: linux
-dist: xenial
 language: cpp
 
 matrix:
   include:
-    - compiler: gcc
+    - os: linux
+      dist: xenial
+      env:
+        - CXX=/usr/bin/g++
+        - CC=/usr/bin/gcc
+      before_install:
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        - sudo apt-get update -qq
+        - sudo apt-get install -y libboost-all-dev gcc g++ cmake
+
+    - os: linux
+      dist: xenial
+      env:
+        - CXX=/usr/bin/clang++
+        - CC=/usr/bin/clang
+      before_install:
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        - sudo apt-get update -qq
+        - sudo apt-get install -y libboost-all-dev clang clang++ cmake
+
+
+
+#    - compiler: clang
 #      addons:
 #        apt:
 #          sources:
 #            - ubuntu-toolchain-r-test
 #          packages:
-#            - g++
-      env:
-        CXX=/usr/bin/g++
-        CC=/usr/bin/gcc
-      before_install:
-        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-        - sudo apt-get update -qq
-        - sudo apt-get install -y libboost-all-dev gcc cmake
-
-    - compiler: clang
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - clang
-          env:
-            CXX=/usr/bin/clang++
-            CC=/usr/bin/clang
+#            - clang
+#          env:
+#            CXX=/usr/bin/clang++
+#            CC=/usr/bin/clang
 
 script:
   - mkdir build
