@@ -4,7 +4,7 @@ language: cpp
 matrix:
   include:
     - os: linux
-      dist: xenial
+      dist: trusty
       before_install:
         - CC=/usr/bin/gcc-8
         - CXX=/usr/bin/g++-8
@@ -13,7 +13,7 @@ matrix:
         - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
 
     - os: linux
-      dist: xenial
+      dist: trusty
       before_install:
         - CC=/usr/bin/clang-5.0
         - CXX=/usr/bin/clang++-5.0
