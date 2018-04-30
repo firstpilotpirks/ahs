@@ -10,7 +10,7 @@ matrix:
         - CXX=/usr/bin/g++-8
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        - sudo apt-get install -y libboost-all-dev cmake gcc-8 g++-8
+        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
 
     - os: linux
       dist: xenial
@@ -19,7 +19,7 @@ matrix:
         - CXX=/usr/bin/clang++-5.0
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        - sudo apt-get install -y libboost-all-dev cmake clang clang-5.0
+        - sudo apt-get install -yf libboost-all-dev cmake clang-5.0
 
 script:
   - mkdir build
