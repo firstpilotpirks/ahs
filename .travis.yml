@@ -3,26 +3,28 @@ language: cpp
 
 matrix:
   include:
-#    - os: linux
-#      dist: trusty
-#      before_install:
-#        - CC=/usr/bin/gcc-8
-#        - CXX=/usr/bin/g++-8
-#        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-#        - sudo apt-get update -qq
-#        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
-#
-#    - os: linux
-#      dist: trusty
-#      before_install:
-#        - CC=/usr/bin/clang-3.9
-#        - CXX=/usr/bin/clang++-3.9
-#        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-#        - sudo apt-get update -qq
-#        - sudo apt-get install -yf libboost-all-dev cmake clang-3.9
-    - os: osx
-      compiler: clang
-      osx_image: xcode9.3
+    - os: linux
+      dist: trusty
+      before_install:
+        - CC=/usr/bin/gcc-8
+        - CXX=/usr/bin/g++-8
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        - sudo apt-get update -qq
+        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
+
+    - os: linux
+      dist: trusty
+      before_install:
+        - CC=/usr/bin/clang-3.9
+        - CXX=/usr/bin/clang++-3.9
+        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+        - sudo apt-get update -qq
+        - sudo apt-get install -yf libboost-all-dev cmake clang-3.9
+
+# It is switch of because c++ 17 doesn't support
+#    - os: osx
+#      compiler: clang
+#      osx_image: xcode9.3
 
 script:
   - mkdir build
