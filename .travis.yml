@@ -10,16 +10,17 @@ matrix:
         - CXX=/usr/bin/g++-8
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
+        - apt-cache search gcc clang
+        #- sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
 
-    - os: linux
-      dist: trusty
-      before_install:
-        - CC=/usr/bin/clang-5.0
-        - CXX=/usr/bin/clang++-5.0
-        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-        - sudo apt-get update -qq
-        - sudo apt-get install -yf libboost-all-dev cmake clang-5.0
+#    - os: linux
+#      dist: trusty
+#      before_install:
+#        - CC=/usr/bin/clang-5.0
+#        - CXX=/usr/bin/clang++-5.0
+#        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+#        - sudo apt-get update -qq
+#        - sudo apt-get install -yf libboost-all-dev cmake clang-5.0
 
 script:
   - mkdir build
