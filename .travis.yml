@@ -6,12 +6,11 @@ matrix:
     - os: linux
       dist: xenial
       before_install:
-        - CC=/usr/bin/gcc
-        - CXX=/usr/bin/g++
+        - CC=/usr/bin/gcc-8
+        - CXX=/usr/bin/g++-8
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
         - sudo apt-get install -y libboost-all-dev cmake gcc-8 g++-8
-        - ls /usr/bin -la
 
     - os: linux
       dist: xenial
@@ -21,20 +20,6 @@ matrix:
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
         - sudo apt-get install -y libboost-all-dev cmake clang clang-5.0
-        - ls /usr/bin -la
-
-
-
-#    - compiler: clang
-#      addons:
-#        apt:
-#          sources:
-#            - ubuntu-toolchain-r-test
-#          packages:
-#            - clang
-#          env:
-#            CXX=/usr/bin/clang++
-#            CC=/usr/bin/clang
 
 script:
   - mkdir build
@@ -43,5 +28,3 @@ script:
   - make
   - cd ../bin
   - ./test_runner --log_level=all --color=true
-
-
