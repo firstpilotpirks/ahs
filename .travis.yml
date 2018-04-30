@@ -27,7 +27,7 @@ matrix:
 script:
   - mkdir build
   - cd build
-  - cmake ..
-  - make VERBOSE=1
+  - cmake -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON ..
+  - make
   - cd ../bin
   - ./test_runner --log_level=all --color=true
