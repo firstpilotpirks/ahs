@@ -20,7 +20,6 @@ matrix:
 #        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 #        - sudo apt-get update -qq
 #        - sudo apt-get install -yf libboost-all-dev cmake clang-3.9
-
     - os: osx
         osx_image: xcode9.3
 #        before_install:
