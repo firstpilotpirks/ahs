@@ -23,20 +23,11 @@ matrix:
     - os: osx
       compiler: clang
       osx_image: xcode9.3
-#        before_install:
-#          - CC=/usr/bin/clang-3.9
-#          - CXX=/usr/bin/clang++-3.9
-#          - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-#          - sudo apt-get update -qq
-#          - sudo apt-get install -yf libboost-all-dev cmake clang-3.9
-#
-#          - brew update
-#          - brew install beanstalk
 
 script:
   - mkdir build
   - cd build
   - cmake ..
-  - make
+  - make VERBOSE=1
   - cd ../bin
   - ./test_runner --log_level=all --color=true
