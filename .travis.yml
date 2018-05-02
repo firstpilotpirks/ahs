@@ -21,7 +21,7 @@ matrix:
         - CXX=/usr/bin/clang++-3.9
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        - sudo apt-get install -yf libboost-all-dev cmake clang-3.9
+        - sudo apt-get install -yf libboost-all-dev cmake clang-3.9 libc++-dev
 
 # It is switch of because c++ 17 doesn't support
 #    - os: osx
