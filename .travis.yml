@@ -5,6 +5,7 @@ matrix:
   include:
     - os: linux
       dist: trusty
+      compiler: gcc
       before_install:
         - CC=/usr/bin/gcc-8
         - CXX=/usr/bin/g++-8
@@ -14,6 +15,7 @@ matrix:
 
     - os: linux
       dist: trusty
+      compiler: clang
       before_install:
         - CC=/usr/bin/clang-3.9
         - CXX=/usr/bin/clang++-3.9
