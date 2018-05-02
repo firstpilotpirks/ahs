@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.9.2)
 
-set(CMAKE_VERBOSE_MAKEFILE ON)
-
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_VERBOSE_MAKEFILE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(GCC_WARNINGS
         "-Wall "
@@ -18,8 +18,7 @@ set(GCC_WARNINGS
         "-Wuseless-cast"
         "-Wdouble-promotion"
         "-Wshadow"
-        "-Wformat=2"
-        )
+        "-Wformat=2")
 
 set(CLANG_WARNINGS
         "-Wall "
@@ -29,8 +28,7 @@ set(CLANG_WARNINGS
         "-Wnull-dereference"
         "-Wdouble-promotion"
         "-Wshadow"
-        "-Wformat=2"
-        )
+        "-Wformat=2")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     add_definitions(${CLANG_WARNINGS})

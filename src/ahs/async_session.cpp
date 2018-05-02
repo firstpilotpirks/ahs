@@ -18,18 +18,18 @@ void async_session::async_run(socket_ptr sock, std::shared_ptr<async_session> se
     start_read_header(data);
 }
 
-void handler(
-  // Result of operation.
-  const boost::system::error_code& error,
-
-  // The number of bytes in the streambuf's get
-  // area up to and including the delimiter.
-  // 0 if an error occurred.
-  std::size_t bytes_transferred
-)
-{
-
-}
+//void handler(
+//  // Result of operation.
+//  const boost::system::error_code& error,
+//
+//  // The number of bytes in the streambuf's get
+//  // area up to and including the delimiter.
+//  // 0 if an error occurred.
+//  std::size_t bytes_transferred
+//)
+//{
+//
+//}
 
 void async_session::start_read_header(const std::shared_ptr<boost::asio::streambuf> data)
 {
@@ -63,6 +63,7 @@ void async_session::handler_read_header(const boost::system::error_code &error,
 {
     if (error)
     {
+        std::cout << bytes_transferred << std::endl;
         return;
     }
 
