@@ -31,15 +31,21 @@ set(CLANG_WARNINGS
         "-Wformat=2")
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
     add_definitions(${CLANG_WARNINGS})
+    
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     add_definitions(${GCC_WARNINGS})
+    
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Intel")
     message(FATAL_ERROR "Intel compiler don't support")
+    
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
     message(FATAL_ERROR "MSVC compiler don't support")
+    
 else()
     message(FATAL_ERROR "Unknown compiler")
+    
 endif()
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
