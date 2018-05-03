@@ -17,8 +17,8 @@ matrix:
       dist: trusty
       compiler: clang
       before_install:
-        - CC=/usr/bin/clang-3.9
-        - CXX=/usr/bin/clang++-3.9
+#        - CC=/usr/bin/clang-3.9
+#        - CXX=/usr/bin/clang++-3.9
 
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
@@ -27,7 +27,8 @@ matrix:
         #- echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
 
         - sudo apt-get update -qq
-        - sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang-3.9 libc++-dev gcc-8 g++-8
+        #- sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang-3.9 libc++-dev
+        - sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang
 
 # It is switch of because c++ 17 doesn't support
 #    - os: osx
