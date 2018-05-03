@@ -33,6 +33,7 @@ set(CLANG_WARNINGS
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
     add_definitions(${CLANG_WARNINGS})
+    set(CMAKE_EXE_LINKER_FLAGS "-lc++abi")
     
 elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
     add_definitions(${GCC_WARNINGS})
