@@ -17,8 +17,8 @@ matrix:
       dist: trusty
       compiler: clang
       before_install:
-        - CC=/usr/bin/clang-6.0
-        - CXX=/usr/bin/clang++-6.0
+        - CC=/usr/bin/clang-3.9
+        - CXX=/usr/bin/clang++-3.9
 
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
 
