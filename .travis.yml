@@ -3,15 +3,15 @@ language: cpp
 
 matrix:
   include:
-    - os: linux
-      dist: trusty
-      compiler: gcc
-      before_install:
-        - CC=/usr/bin/gcc-8
-        - CXX=/usr/bin/g++-8
-        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
-        - sudo apt-get update -qq
-        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
+#    - os: linux
+#      dist: trusty
+#      compiler: gcc
+#      before_install:
+#        - CC=/usr/bin/gcc-8
+#        - CXX=/usr/bin/g++-8
+#        - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
+#        - sudo apt-get update -qq
+#        - sudo apt-get install -yf libboost-all-dev cmake gcc-8 g++-8
 
     - os: linux
       dist: trusty
@@ -27,7 +27,8 @@ matrix:
         - echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
 
         - sudo apt-get update -qq
-        - sudo apt-get install -yf libboost-all-dev cmake clang-6.0 libc++-dev
+        - sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang-6.0
+        libc++-dev
 
 # It is switch of because c++ 17 doesn't support
 #    - os: osx
