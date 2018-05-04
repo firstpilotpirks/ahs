@@ -19,22 +19,18 @@ matrix:
       before_install:
 #        - CC=/usr/bin/clang-3.9
 #        - CXX=/usr/bin/clang++-3.9
-
-
-
-        - echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-6.0 main" | sudo tee -a /etc/apt/sources.list
-        - echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-6.0 main" | sudo tee -a /etc/apt/sources.list
-        - echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
-
+#        - echo "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-6.0 main" | sudo tee -a /etc/apt/sources.list
+#        - echo "deb-src http://apt.llvm.org/trusty/ llvm-toolchain-trusty-6.0 main" | sudo tee -a /etc/apt/sources.list
+#        - echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu trusty main" | sudo tee -a /etc/apt/sources.list
+#        - sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang-3.9 libc++-dev
         - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
         - sudo apt-get update -qq
-        #- sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang-3.9 libc++-dev
-        - sudo apt-get install -yf --allow-unauthenticated libboost-all-dev cmake clang
+        - sudo apt-get install -yf libboost-all-dev cmake clang
 
 # It is switch of because c++ 17 doesn't support
-#    - os: osx
-#      compiler: clang
-#      osx_image: xcode9.3
+    - os: osx
+      compiler: clang
+      osx_image: xcode9.3
 
 script:
   - mkdir build
