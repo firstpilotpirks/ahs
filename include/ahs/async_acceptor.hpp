@@ -9,7 +9,7 @@
 #include <boost/asio.hpp>
 #include <boost/bind.hpp>
 
-#include "async_session.h"
+#include "async_session.hpp"
 
 class async_acceptor
 {

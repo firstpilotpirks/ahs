@@ -12,7 +12,7 @@ ${Boost_UNIT_TEST_FRAMEWORK_LIBRARY}
 )
 
 target_link_libraries(test_runner -lpthread)
-target_link_libraries(test_runner http)
+#target_link_libraries(test_runner http)
 
 
 

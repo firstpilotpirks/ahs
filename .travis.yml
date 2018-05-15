@@ -27,10 +27,10 @@ matrix:
         - sudo apt-get update -qq
         - sudo apt-get install -yf libboost-all-dev cmake clang
 
-# It is switch of because c++ 17 doesn't support
-    - os: osx
-      compiler: clang
-      osx_image: xcode9.3
+## It is switch of because c++ 17 doesn't support
+#    - os: osx
+#      compiler: clang
+#      osx_image: xcode9.3
 
 script:
   - mkdir build
