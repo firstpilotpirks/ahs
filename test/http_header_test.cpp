@@ -1,6 +1,7 @@
 #define BOOST_TEST_DYN_LINK
 
 #include <iostream>
+#include <string_view>
 
 #include <boost/test/unit_test.hpp>
 
