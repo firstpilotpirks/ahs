@@ -2,6 +2,7 @@
 #include <boost/algorithm/string.hpp>
 
 #include "ahs/async_session.hpp"
+#include "ahs/http/http_header_parser.hpp"
 
 async_session::async_session(boost::asio::io_service &service) :
         _service(service)
@@ -78,28 +79,31 @@ void async_session::start_header_parser(const std::string header)
     _service.post(boost::bind(&async_session::handler_header_parser, this, header));
 }
 
-void async_session::handler_header_parser(const std::string header)
+void async_session::handler_header_parser(const std::string raw_header)
 {
-    typedef std::vector<std::string> split_vector_type;
-    typedef std::map<std::string, std::string> split_value_type;
+    http_header_parser parser;
+    auto header = parser.parse(raw_header);
 
-    split_vector_type lines;
-    boost::split(lines, header, boost::is_any_of("\r\n"), boost::token_compress_on);
-
-    split_value_type header_parameter;
-    for(auto & line : lines)
-    {
-        split_vector_type key_and_value;
-        boost::split(key_and_value, line, boost::is_any_of(":"), boost::token_compress_on);
-        if(key_and_value.size() == 2)
-        {
-            header_parameter[key_and_value.at(0)] = key_and_value.at(1);
-        }
-    }
-
-    for(auto  & parameter: header_parameter)
-    {
-        std::cout << parameter.first << "=" << parameter.second << std::endl;
-    }
+//    typedef std::vector<std::string> split_vector_type;
+//    typedef std::map<std::string, std::string> split_value_type;
+//
+//    split_vector_type lines;
+//    boost::split(lines, raw_header, boost::is_any_of("\r\n"), boost::token_compress_on);
+//
+//    split_value_type header_parameter;
+//    for(auto & line : lines)
+//    {
+//        split_vector_type key_and_value;
+//        boost::split(key_and_value, line, boost::is_any_of(":"), boost::token_compress_on);
+//        if(key_and_value.size() == 2)
+//        {
+//            header_parameter[key_and_value.at(0)] = key_and_value.at(1);
+//        }
+//    }
+//
+//    for(auto  & parameter: header_parameter)
+//    {
+//        std::cout << parameter.first << "=" << parameter.second << std::endl;
+//    }
 }
 

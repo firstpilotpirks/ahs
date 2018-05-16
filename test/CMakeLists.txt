@@ -1,5 +1,5 @@
 file(GLOB SRC "*.cpp")
-add_executable(test_runner ${SRC})
+add_executable(test_runner ${SRC} http_header_parser_test.cpp)
 
 set(BOOST_INCLUDE_DIRS $boost_installation_prefix/include)
 target_include_directories(test_runner PRIVATE ${BOOST_INCLUDE_DIRS})

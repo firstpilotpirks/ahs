@@ -28,7 +28,7 @@ private:
                              size_t bytes_transferred, std::shared_ptr<boost::asio::streambuf> data);
 
     void start_header_parser(const std::string header);
-    void handler_header_parser(const std::string header);
+    void handler_header_parser(const std::string raw_header);
 };
 
 
