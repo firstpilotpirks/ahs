@@ -5,9 +5,7 @@
 #include "ahs/http/http_header_parser.hpp"
 
 BOOST_AUTO_TEST_SUITE(http_header_parser_test)
-
  BOOST_AUTO_TEST_CASE(parse) {
-
    std::string raw_header(
        "GET /tutorials/other/top-20-mysql-best-practices/ HTTP/1.1\r\n"
        "Host: net.tutsplus.com\r\n"

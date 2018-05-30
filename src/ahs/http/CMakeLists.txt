@@ -1,3 +1,3 @@
 
-#file(GLOB SRC "*.cpp")
-#add_library(http STATIC ${SRC})
+file(GLOB SRC "*.cpp")
+add_library(http STATIC ${SRC})

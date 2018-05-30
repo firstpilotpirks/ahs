@@ -5,7 +5,8 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(GCC_WARNINGS
-        "-Wall "
+        "-Wall"
+        "=Wimplicit-fallthrough"
         "-Werror"
         "-Wpedantic"
         "-Wextra"

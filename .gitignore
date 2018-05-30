@@ -2,5 +2,5 @@ build
 .idea
 bin
 lib
+doc
 cmake-build-debug
-
